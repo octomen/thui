@@ -1,4 +1,4 @@
-[![Build Status](http://drone.liinda.ru/api/badges/octomen/thunx/status.svg)](http://drone.liinda.ru/octomen/thunx)
+[![Build Status](http://drone.liinda.ru/api/badges/octomen/thui/status.svg)](http://drone.liinda.ru/octomen/thui)
 
 # to-do-list
 
