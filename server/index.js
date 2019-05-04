@@ -3,7 +3,6 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 
 const auth = require('./middleware/auth');
-const themes = require('./middleware/themes');
 const { handlerError } = require('./utils/error');
 
 const app = express();
@@ -13,7 +12,6 @@ app.use([
     cookieParser(),
     auth
 ]);
-app.get('/', themes);
 app.use(express.static(path.join(__dirname, '../dist')));
 
 app.use(handlerError);
