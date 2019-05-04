@@ -4,16 +4,25 @@ const themesNamespace = createNamespacedHelpers('themes');
 
 export default {
   name: 'Themes',
-  props: {
-    title: String
+  data() {
+    return {
+      title: 'Прими участие в голосовании за следующий доклад!',
+      speakersTitle: 'Доклад от'
+    };
+  },
+  mounted() {
+    const { sessionId } = this.$store.state.auth;
+    this.fetchThemes(sessionId);
   },
   computed: {
     ...themesNamespace.mapGetters([
       'newThemes',
       'savedThemes'
-    ]),
-    savedThemes: function () {
-      return this.$store.state.themes.list;
-    }
+    ])
+  },
+  methods: {
+    ...themesNamespace.mapActions([
+      'fetchThemes'
+    ])
   }
 };

@@ -1,26 +1,21 @@
-export const ADD_THEME = 'addTheme';
+/* eslint no-param-reassign: 0 */
+
+import { fetchThemes } from '../../api';
 
 export const themesState = {
-  namespace: true,
+  namespaced: true,
   state: {
-    list: [
-      {
-        id: 1,
-        title: 'Awesome vuex',
-        description: 'Vuex is a state management pattern + library for Vue.js applications. ' +
-          'It serves as a centralized store for all the components in an application, ' +
-          'with rules ensuring that the state can only be mutated in a predictable fashion. ' +
-          'It also integrates with Vue\'s official devtools extension to provide advanced features such as ' +
-          'zero-config time-travel debugging and state snapshot export / import.'
-      }
-    ]
+    list: []
   },
   getters: {
     newThemes: state => state.list.filter(theme => !theme.id),
     savedThemes: state => state.list.filter(theme => theme.id)
   },
   mutations: {
-    [ADD_THEME]: (state, payload) => {
+    updateList: (state, payload) => {
+      state.list = payload.themes;
+    },
+    addTheme: (state, payload) => {
       const newTheme = {
         id: undefined,
         title: payload.title,
@@ -31,6 +26,11 @@ export const themesState = {
     }
   },
   actions: {
-
+    async fetchThemes({ commit }, sessionId) {
+      const themes = await fetchThemes(sessionId);
+      if (themes && themes.length) {
+        commit('updateList', { themes });
+      }
+    }
   }
 };

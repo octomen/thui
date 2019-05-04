@@ -1,21 +1,21 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <Themes title="New themes is coming!"/>
+    <VotingLogo/>
+    <Themes/>
   </div>
 </template>
 
 <script>
 
 import Themes from '@/components/Themes/index.vue';
+import VotingLogo from '@/components/VotingLogo/index.vue';
+
 
 export default {
   name: 'home',
-  data: () => ({
-    themes: [],
-  }),
   components: {
     Themes,
+    VotingLogo
   },
 };
 </script>

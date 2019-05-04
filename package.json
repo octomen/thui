@@ -1,5 +1,5 @@
 {
-  "name": "to-do-list",
+  "name": "thui",
   "version": "0.1.0",
   "private": true,
   "engines": {
@@ -7,17 +7,16 @@
     "npm": "6.4.1"
   },
   "scripts": {
-    "deps": "npm ci && npm run deps:server && npm run deps:client",
+    "deps": "npm ci && npm-run-all deps:*",
     "deps:server": "cd ./server && npm ci",
     "deps:client": "cd ./client && npm ci",
-    
     "server:watch": "cd ./server && npm run start:watch",
-
     "client:watch": "cd ./client && npm run serve",
     "client:build": "cd ./client && npm run build"
   },
   "dependencies": {},
   "devDependencies": {
-    "@vue/cli": "3.5.5"
+    "@vue/cli": "3.5.5",
+    "npm-run-all": "4.1.5"
   }
 }
