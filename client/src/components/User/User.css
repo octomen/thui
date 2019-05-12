@@ -1,0 +1,17 @@
+.user {
+    position: relative;
+}
+
+.user__avatar {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 50px;
+    height: 50px;
+}
+
+.user__avatar >>> svg {
+    transform: scale(0.25);
+    transform-origin: 0 0;
+}
