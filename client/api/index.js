@@ -12,16 +12,27 @@ export async function getSessionIdByToken(token) {
   return response && response.data && response.data.Authentication;
 }
 
-export async function fetchThemes(sessionId) {
+export async function fetchThemes(authentication) {
   const response = await axios('/api/themes', {
     responseType: 'json',
     params: {
       namespace_code: 'board_tuesday'
     },
     headers: {
-      authentication: sessionId
+      authentication
     }
   });
 
-  return response && response.data && response.data.result;
+  return response && response.data && response.data.results;
+}
+
+export async function getUserInfo(authentication) {
+  const response = await axios('/api/me', {
+    responseType: 'json',
+    headers: {
+      authentication
+    }
+  });
+
+  return response && response.data && response.data.results;
 }
