@@ -16,6 +16,15 @@ class InternalServerError extends Error {
     }
 }
 
+class InvalidTokenError extends Error {
+    constructor(token) {
+        super();
+
+        this.message = `Token ${token} is invalid. It can contain "A-Za-z0-9_-" characters`;
+        this.statusCode = 400;
+    }
+}
+
 function handlerError(err, req, res, next) {
     let error;
 
@@ -32,8 +41,10 @@ function handlerError(err, req, res, next) {
         .end(new InternalServerError().message);
 }
 
-module.exports =  {
+module.exports = {
     UnauthorizedError,
+    InternalServerError,
+    InvalidTokenError,
 
     handlerError
 };

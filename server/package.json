@@ -2,12 +2,11 @@
     "name": "server",
     "version": "1.0.0",
     "dependencies": {
-        "cookie-parser": "^1.4.4",
-        "express": "^4.16.4",
-        "got": "^9.6.0"
+        "express": "4.16.4",
+        "vue-server-renderer": "2.6.10"
     },
     "devDependencies": {
-        "nodemon": "^1.18.10"
+        "nodemon": "1.18.10"
     },
     "scripts": {
         "start:watch": "nodemon . localhost 3000"
