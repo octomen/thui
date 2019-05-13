@@ -1,31 +1,36 @@
-[![Build Status](http://drone.liinda.ru/api/badges/octomen/thui/status.svg)](http://drone.liinda.ru/octomen/thui)
+* Drone build: [![Build Status](http://drone.liinda.ru/api/badges/octomen/thui/status.svg)](http://drone.liinda.ru/octomen/thui)
 
-# to-do-list
+# Web интерфейс сервиса thupoll
 
-## Project setup
-```
-npm install
-```
+<img src="https://user-images.githubusercontent.com/11353797/57648496-1317e280-75df-11e9-918a-d1b2a71dbda9.png" width=200/>
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Описание
+Сервис разделен на две части:
+* ``client`` - клиентская часть, написанная с использованим стека ``vue-cli``;
+* ``server`` - серверная часть. Раздает результат сборки ``vue-cli-service build`` клиентской части,
+представляет из себя ``express`` сервер;
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Разработка
+Для начала разработки выполните следующие команды:
+```bash
+# Установка зависимостей проекта
+npm run deps
 
-### Run your tests
-```
-npm run test
+# Запуск клиентской части в режиме разработки
+npm run client:watch
 ```
 
-### Lints and fixes files
-```
-npm run lint
+Для отладки серверной части следует выполнить
+```bash
+# Установка зависимостей проекта
+npm run deps
+
+# Сборка клиентской части
+npm run client:build
+
+# Запуск сервера в watch режиме
+npm run server:watch
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Подробнее про сервер [тут](./server/README.md)
+Про клиентскую часть можно прочитать [здесь](./client/README.md)
