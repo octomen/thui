@@ -1,29 +1,26 @@
-# client
+# Клиентская часть thupoll
 
-## Project setup
-```
+## Установка зависимостей
+```bash
 npm install
 ```
 
-### Compiles and hot-reloads for development
-```
+### Компиляция и запуск dev-сервера с hot-reload модулем
+```bash
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
+### Сборка продовой версии
+```bash
 npm run build
 ```
 
-### Run your tests
-```
+### Pfgecr ntcnjd
+```bash
 npm run test
 ```
 
-### Lints and fixes files
+### Линтинг
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
