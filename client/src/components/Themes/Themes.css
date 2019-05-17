@@ -11,77 +11,48 @@
     counter-reset: li;;
 }
 .theme {
-    position: relative;
-    border-left: 4px solid #DDDDDD;
-    padding:16px 20px 16px 28px;
-    margin:12px 0 12px 70px;
-    transition-duration: 0.3s;
-    text-align: left;
+    display: grid;
 
-    cursor: pointer
+    grid-template-columns: 200px 1fr;
+    grid-row-gap: 15px;
+
+    justify-items: start;
+    align-items: center;
+
+    margin: 30px;
+
+    padding: 10px;
+
+    border: 1px solid rgb(168, 168, 168)
 }
-.theme:before {
-    line-height: 32px;
-    position: absolute;
-    top: 10px;
-    left:-80px;
-    width:80px;
-    text-align:center;
-    font-size: 24px;
-    font-weight: bold;
-    color: #DDDDDD;
-    counter-increment: li;
-    content: counter(li);
-    transition-duration: 0.3s;
-    box-sizing: border-box;
-}
-.theme:hover:before {
-    color: #77AEDB;
-}
-.theme:after {
-    position: absolute;
-    top: 26px;
-    left: -40px;
-    width: 60px;
-    height: 60px;
-    border: 8px solid #3399FF;
-    border-radius: 50%;
-    content: '';
-    opacity: 0;
-    transition: transform 0.3s, opacity 0.3s;
-    transform: translateX(-50%) translateY(-50%) scale(0.1);
-    pointer-events: none;
-    box-sizing: border-box;
-}
-.theme:hover:after {
-    opacity: 0.2;
-    transform: translateX(-50%) translateY(-50%) scale(1);
+.theme__field {
+    justify-self: start;
 }
 .theme__author {
-    font-size: 18px;
+
+}
+.theme__content {
+
+}
+.theme__title {
+    font-size: 25px;
+    line-height: 40px;
+    font-weight: bold;
 }
 .theme__description {
     font-size: 20px;
-    margin: 10px 0;
+    line-height: 30px;
 }
-.theme__speakers {
-    list-style: none;
+.theme__reporter {
+
+}
+.theme__buttons {
     display: flex;
-    justify-content: flex-end;
-
-    font-size: 14px;
+    flex-direction: column;
+    align-items: center;
 }
-.theme__speakers-title {
-    color: rgba(0,0,0,.7);
-}
-.theme__speaker-list {
-    padding: 0;
-}
-.theme__speaker {
-    display: inline-block;
-
-    text-decoration: underline;
-}
-.theme__speaker + .theme__speaker {
-    margin-left: 0.5em;
+.theme__buttons .theme__button {
+    height: auto;
+    margin: 15px;
+    opacity: 1;
 }

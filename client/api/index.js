@@ -22,7 +22,7 @@ export async function fetchThemes(authentication) {
       authentication
     }
   });
-
+  console.log('response', response);
   return response && response.data && response.data.results;
 }
 

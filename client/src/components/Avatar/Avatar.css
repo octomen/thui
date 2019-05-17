@@ -1,0 +1,18 @@
+.avatar {
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+
+.avatar__pic {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.avatar__pic >>> svg {
+    transform: scale(0.25);
+    transform-origin: 0 0;
+}

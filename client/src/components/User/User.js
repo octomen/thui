@@ -3,7 +3,7 @@ import { createNamespacedHelpers } from 'vuex';
 const authNamespace = createNamespacedHelpers('auth');
 
 export default {
-  name: 'User',
+  name: 'Avatar',
   mounted() {
     if (this.sessionId) {
       this.setUserInfo(this.sessionId);

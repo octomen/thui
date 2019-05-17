@@ -1,13 +1,20 @@
 import { createNamespacedHelpers } from 'vuex';
+import Avatar from '@/components/Avatar/index.vue';
 
 const themesNamespace = createNamespacedHelpers('themes');
 
 export default {
   name: 'Themes',
+  components: {
+    Avatar
+  },
   data() {
     return {
       title: 'Прими участие в голосовании за следующий доклад!',
-      speakersTitle: 'Доклад от'
+      author: 'Чья идея:',
+      reporter: 'Кто смелый?',
+      noReporter: '(не нашелся...)',
+      themeTitle: 'О чем:'
     };
   },
   mounted() {
