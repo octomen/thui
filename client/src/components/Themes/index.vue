@@ -1,60 +1,30 @@
 <template>
   <div class="themes-page">
     <h1 class="themes-title">{{ title }}</h1>
-    <ol class="theme-list">
-      <li v-for="theme in savedThemes" v-bind:key="theme.id" class="theme">
-        <div class="theme__field">
-          {{ author }}
-        </div>
-        <div class="theme__author">
-          <Avatar v-bind:user="theme.author" />
-        </div>
-        <div class="theme__field">
-          {{ themeTitle }}
-        </div>
-        <div class="theme__content">
-          <div class="theme__title">{{ theme.title }}</div>
-          <div class="theme__description">{{ theme.description }}</div>
-        </div>
-        <div class="theme__field">
-          {{ reporter }}
-        </div>
-        <div v-if="theme.reporter" class="theme__reporter" >
-          <Avatar v-bind:user="theme.reporter" />
-        </div>
-        <div v-else class="theme__reporter" >
-          {{ noReporter }}
-        </div>
-      </li>
-    </ol>
-    <v-btn-toggle v-model="toggle_multiple" multiple class="theme__buttons">
-      <v-btn v-for="theme in savedThemes" v-bind:key="theme.id" class="theme__button">
-        <div class="theme">
-          <div class="theme__field">
-            {{ author }}
-          </div>
-          <div class="theme__author">
+    <v-list three-line>
+      <template v-for="(theme, index) in savedThemes">
+        <v-list-tile
+          :key="theme.title"
+          avatar
+          @click=""
+        >
+          <v-list-tile-avatar size="50">
             <Avatar v-bind:user="theme.author" />
-          </div>
-          <div class="theme__field">
-            {{ themeTitle }}
-          </div>
-          <div class="theme__content">
-            <div class="theme__title">{{ theme.title }}</div>
-            <div class="theme__description">{{ theme.description }}</div>
-          </div>
-          <div class="theme__field">
-            {{ reporter }}
-          </div>
-          <div v-if="theme.reporter" class="theme__reporter" >
-            <Avatar v-bind:user="theme.reporter" />
-          </div>
-          <div v-else class="theme__reporter" >
-            {{ noReporter }}
-          </div>
-        </div>
-      </v-btn>
-    </v-btn-toggle>
+          </v-list-tile-avatar>
+
+          <v-list-tile-content>
+            <v-list-tile-title v-html="theme.title"></v-list-tile-title>
+            <v-list-tile-sub-title v-html="theme.description"></v-list-tile-sub-title>
+          </v-list-tile-content>
+        </v-list-tile>
+
+        <v-divider
+          v-if="savedThemes.length - 1 !== index"
+          :key="index"
+          :inset="true"
+        ></v-divider>
+      </template>
+    </v-list>
   </div>
 </template>
 

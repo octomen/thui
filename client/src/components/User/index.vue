@@ -1,11 +1,5 @@
 <template>
-    <div class="user">
-      <div
-        class="user__avatar"
-        v-html="user.avatar"
-      >
-      </div>
-    </div>
+    <Avatar :user="user"/>
 </template>
 
 <style scoped src="./User.css"/>
